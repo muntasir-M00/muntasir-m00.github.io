@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tech Sergeant</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/solution.css" />
+  </head>
+  <body>
+    <!--nav bar with the image and the text-->
+    <!--nav bar with the image and the text-->
+    <!--nav bar with the image and the text-->
+    <!--nav bar with the image and the text-->
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <!-- Logo + Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img
+            src="pic/logo3.png"
+            alt="Logo"
+            width="54"
+            height="42"
+            class="me-2"
+          />
+          <span style="font-size: 1.75rem; font-weight: bold; color: #ffffff">
+            Tech&nbsp;
+          </span>
+          <!--<span style="font-size: 1.75rem; font-weight: bold; color: #bb0000">
+            Sergeant
+          </span>-->
+          <span style="font-size: 1.75rem; font-weight: bold; color: #0278ff">
+            Sergeant
+          </span>
+        </a>
+
+        <!-- Toggler for mobile (THIS IS REQUIRED!) -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- Left side: Navigation links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="solution.html">Solutions</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                OS
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="windows.html">Windows</a>
+                </li>
+                <li><a class="dropdown-item" href="linux.html">Linux</a></li>
+                <li>
+                  <a class="dropdown-item" href="chrome.html">Chrome OS</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="windows-10-LTSC.html"
+                    >Windows 10 LTSC</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="tiny10.html">Tiny 10</a></li>
+                <li><a class="dropdown-item" href="tiny11.html">Tiny 11</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about-us.html">About Us</a>
+            </li>
+          </ul>
+
+          <!-- Right side: Search + Admin Login -->
+          <form class="d-flex me-3" role="search" action="/search" method="get">
+            <input
+              class="form-control me-2"
+              type="search"
+              name="q"
+              placeholder="Search guides, OS, solutions..."
+              aria-label="Search"
+              required
+            />
+            <button class="btn btn-outline-primary" type="submit">
+              Search
+            </button>
+          </form>
+
+          <button
+            class="btn btn-outline-danger"
+            data-bs-toggle="modal"
+            data-bs-target="#adminLoginModal"
+          >
+            Admin Login
+          </button>
+
+          <div
+            class="modal fade"
+            id="adminLoginModal"
+            tabindex="-1"
+            aria-labelledby="adminLoginModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-dark text-white border-secondary">
+                <!-- Header -->
+                <div class="modal-header border-secondary">
+                  <h5 class="modal-title" id="adminLoginModalLabel">
+                    Admin Login
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+
+                <!-- Body – this is where the login fields live -->
+                <div class="modal-body">
+                  <form id="adminLoginForm">
+                    <div class="mb-3">
+                      <label for="adminEmail" class="form-label"
+                        >Email / Username</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-dark text-white border-secondary"
+                        id="adminEmail"
+                        placeholder="admin@example.com"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="adminPassword" class="form-label"
+                        >Password</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control bg-dark text-white border-secondary"
+                        id="adminPassword"
+                        placeholder="••••••••"
+                        required
+                      />
+                    </div>
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-danger">
+                        Login
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer border-0">
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--video cardsssssssssssssssss-->
+    <!--video cardsssssssssssssssss-->
+    <!--video cardsssssssssssssssss-->
+
+    <!--this block referes to the first video of the left corner-->
+    <!--this block referes to the first video of the left corner-->
+    <main>
+      <div class="container">
+        <div class="row g-4">
+          <!-- g-4 adds clean spacing -->
+
+          <!-- Card 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <video
+                src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4"
+                class="card-img-top"
+                controls
+              ></video>
+
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <div class="ratio ratio-16x9">
+                <iframe
+                  src="https://www.youtube.com/embed/NAMvdbS4lk4"
+                  title="YouTube video"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <div class="ratio ratio-16x9">
+                <iframe
+                  src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                  title="YouTube video"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row g-4">
+          <!-- g-4 adds clean spacing -->
+
+          <!-- Card 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <video
+                src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4"
+                class="card-img-top"
+                controls
+              ></video>
+
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <div class="ratio ratio-16x9">
+                <iframe
+                  src="https://www.youtube.com/embed/NAMvdbS4lk4"
+                  title="YouTube video"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <div class="ratio ratio-16x9">
+                <iframe
+                  src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                  title="YouTube video"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Bottom bar -->
+    <footer>
+      <div class="footer-bottom">
+        <div class="container-fluid px-3 px-md-4 px-lg-5">
+          <!-- ← controlled padding -->
+          <div
+            class="d-flex flex-column flex-md-row justify-content-between align-items-center"
+          >
+            <div class="copyright">
+              © 2026 <span class="brand-tech">Tech&nbsp;</span
+              ><span class="brand-sergeant">Sergeant</span>
+              – Student project by Mirza Muntasir Mahmud
+            </div>
+
+            <div class="footer-utils">
+              <a href="#" class="back-to-top" aria-label="Back to top">
+                Back to Top ↑
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

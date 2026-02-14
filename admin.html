@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Panel - Tech Sergeant</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style/admin.css" />
+  </head>
+  <body>
+    <!-- Navbar matching the theme: dark bg, blue accents, logo -->
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <!-- Logo + Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img
+            src="pic/logo3.png"
+            alt="Logo"
+            width="54"
+            height="42"
+            class="me-2"
+          />
+          <span style="font-size: 1.75rem; font-weight: bold; color: #ffffff">
+            Tech&nbsp;
+          </span>
+          <span style="font-size: 1.75rem; font-weight: bold; color: #0278ff">
+            Sergeant
+          </span>
+        </a>
+
+        <!-- Toggler for mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- Left side: Admin Navigation links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#dashboard"
+                >Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#edit-home">Edit Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#edit-solutions">Edit Solutions</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Edit OS Guides
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#edit-windows">Windows</a>
+                </li>
+                <li><a class="dropdown-item" href="#edit-linux">Linux</a></li>
+                <li>
+                  <a class="dropdown-item" href="#edit-chrome">Chrome OS</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#edit-ltsc">Windows 10 LTSC</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#edit-tiny10">Tiny 10</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#edit-tiny11">Tiny 11</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#edit-news">Edit News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#edit-about">Edit About Us</a>
+            </li>
+          </ul>
+
+          <!-- Right side: Logout -->
+          <button class="btn btn-outline-danger" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Admin Content -->
+    <main class="py-5 bg-dark">
+      <div class="container">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="mb-5">
+          <h1 class="display-4 fw-bold text-white text-shadow-red mb-4">
+            Admin Dashboard
+          </h1>
+          <p class="lead text-light">
+            Manage and update website content. Use the navigation to edit
+            specific sections.
+          </p>
+        </section>
+
+        <!-- Edit Home Section -->
+        <section id="edit-home" class="mb-5">
+          <h2 class="fw-bold text-primary mb-4">Edit Home Page</h2>
+          <div class="row g-4">
+            <!-- Carousel Editor -->
+            <div class="col-md-6">
+              <div class="card h-100 border-0 shadow-lg bg-gradient-dark p-4">
+                <h5 class="card-title fw-bold mb-3 text-primary">
+                  Update Carousel Images
+                </h5>
+                <form>
+                  <div class="mb-3">
+                    <label
+                      for="carousel-image"
+                      class="form-label text-secondary"
+                      >Upload New Image</label
+                    >
+                    <input
+                      type="file"
+                      class="form-control bg-dark text-white border-secondary"
+                      id="carousel-image"
+                      accept="image/*"
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-outline-primary">
+                    Upload
+                  </button>
+                </form>
+                <ul class="list-group mt-3">
+                  <li
+                    class="list-group-item bg-dark text-light d-flex justify-content-between align-items-center"
+                  >
+                    cpp1.jpg
+                    <button class="btn btn-sm btn-outline-danger">
+                      Delete
+                    </button>
+                  </li>
+                  <!-- Add more existing images similarly -->
+                </ul>
+              </div>
+            </div>
+
+            <!-- Home Cards Editor -->
+            <div class="col-md-6">
+              <div class="card h-100 border-0 shadow-lg bg-gradient-dark p-4">
+                <h5 class="card-title fw-bold mb-3 text-primary">
+                  Edit Home Cards
+                </h5>
+                <form>
+                  <div class="mb-3">
+                    <label for="card-title" class="form-label text-secondary"
+                      >Card Title (e.g., SOLUTIONS)</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control bg-dark text-white border-secondary"
+                      id="card-title"
+                      value="SOLUTIONS"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="card-desc" class="form-label text-secondary"
+                      >Description</label
+                    >
+                    <textarea
+                      class="form-control bg-dark text-white border-secondary"
+                      id="card-desc"
+                      rows="3"
+                    >
+Find your tech solutions easily, fix issues yourself, learn and grow.</textarea
+                    >
+                  </div>
+                  <div class="mb-3">
+                    <label for="card-link" class="form-label text-secondary"
+                      >Link URL</label
+                    >
+                    <input
+                      type="url"
+                      class="form-control bg-dark text-white border-secondary"
+                      id="card-link"
+                      value="solution.html"
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-outline-primary">
+                    Save Changes
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Edit Solutions Section (Enhanced for video cards) -->
+        <section id="edit-solutions" class="mb-5">
+          <h2 class="fw-bold text-primary mb-4">Edit Solutions Page</h2>
+          <div class="card border-0 shadow-lg bg-gradient-dark p-4">
+            <h5 class="card-title fw-bold mb-3 text-primary">
+              Add/Update Video Cards
+            </h5>
+            <form id="solutionForm">
+              <div class="mb-3">
+                <label for="solution-title" class="form-label text-secondary"
+                  >Card Title</label
+                >
+                <input
+                  type="text"
+                  class="form-control bg-dark text-white border-secondary"
+                  id="solution-title"
+                  placeholder="e.g., Fix Blue Screen Error"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="solution-desc" class="form-label text-secondary"
+                  >Card Description</label
+                >
+                <textarea
+                  class="form-control bg-dark text-white border-secondary"
+                  id="solution-desc"
+                  rows="4"
+                  placeholder="Some quick example text to build on the card title."
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label
+                  for="solution-media-type"
+                  class="form-label text-secondary"
+                  >Media Type</label
+                >
+                <select
+                  class="form-control bg-dark text-white border-secondary"
+                  id="solution-media-type"
+                >
+                  <option value="video">Upload Local Video</option>
+                  <option value="youtube">Embed YouTube Video</option>
+                </select>
+              </div>
+              <div class="mb-3" id="video-upload-field">
+                <label for="solution-video" class="form-label text-secondary"
+                  >Upload Video</label
+                >
+                <input
+                  type="file"
+                  class="form-control bg-dark text-white border-secondary"
+                  id="solution-video"
+                  accept="video/*"
+                />
+              </div>
+              <div class="mb-3 d-none" id="youtube-embed-field">
+                <label for="solution-youtube" class="form-label text-secondary"
+                  >YouTube Embed URL</label
+                >
+                <input
+                  type="url"
+                  class="form-control bg-dark text-white border-secondary"
+                  id="solution-youtube"
+                  placeholder="https://www.youtube.com/embed/..."
+                />
+              </div>
+              <div class="mb-3">
+                <label for="solution-link" class="form-label text-secondary"
+                  >Button Link (optional)</label
+                >
+                <input
+                  type="url"
+                  class="form-control bg-dark text-white border-secondary"
+                  id="solution-link"
+                  placeholder="e.g., #"
+                />
+              </div>
+              <button type="submit" class="btn btn-outline-primary">
+                Add/Update Card
+              </button>
+            </form>
+            <!-- Existing Cards List (Placeholder for dynamic load) -->
+            <ul class="list-group mt-4" id="existing-cards">
+              <!-- JS will populate this -->
+            </ul>
+          </div>
+        </section>
+
+        <!-- Similar sections for other pages can be added here following the same pattern -->
+      </div>
+    </main>
+
+    <!-- Footer matching the theme -->
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row g-5">
+            <!-- Brand & summary -->
+            <div class="col-lg-5">
+              <div class="footer-brand">
+                <span class="brand-tech">Tech&nbsp;</span
+                ><span class="brand-sergeant">Sergeant</span>
+              </div>
+              <p class="footer-summary">
+                Admin Panel - Manage content securely.
+              </p>
+            </div>
+            <!-- Navigation, etc. (simplified) -->
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container-fluid px-3 px-md-4 px-lg-5">
+          <div
+            class="d-flex flex-column flex-md-row justify-content-between align-items-center"
+          >
+            <div class="copyright">© 2026 Tech Sergeant – Admin Panel</div>
+            <div class="footer-utils">
+              <a href="#" class="back-to-top">Back to Top ↑</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Auth check: Redirect if not logged in
+      if (!localStorage.getItem("loggedIn")) {
+        window.location.href = "index.html";
+      }
+
+      // Logout functionality
+      document
+        .getElementById("logoutBtn")
+        .addEventListener("click", function () {
+          localStorage.removeItem("loggedIn");
+          window.location.href = "index.html";
+        });
+
+      // Toggle media fields based on selection
+      const mediaTypeSelect = document.getElementById("solution-media-type");
+      const videoField = document.getElementById("video-upload-field");
+      const youtubeField = document.getElementById("youtube-embed-field");
+
+      mediaTypeSelect.addEventListener("change", function () {
+        if (this.value === "video") {
+          videoField.classList.remove("d-none");
+          youtubeField.classList.add("d-none");
+        } else {
+          videoField.classList.add("d-none");
+          youtubeField.classList.remove("d-none");
+        }
+      });
+
+      // Placeholder for existing cards (simulate loading from solution.html structure)
+      const existingCardsList = document.getElementById("existing-cards");
+      // Simulate data - in real scenario, this could parse solution.html or use storage
+      const sampleCards = [
+        {
+          title: "Card title",
+          desc: "Some quick example text to build on the card title.",
+          media: "Local Video",
+        },
+        {
+          title: "Card title",
+          desc: "Some quick example text to build on the card title.",
+          media: "YouTube",
+        },
+        // Add more based on solution.html
+      ];
+      sampleCards.forEach((card, index) => {
+        const li = document.createElement("li");
+        li.className =
+          "list-group-item bg-dark text-light d-flex justify-content-between align-items-center";
+        li.innerHTML = `${card.title} (${card.media}) <div><button class="btn btn-sm btn-outline-primary me-2" data-index="${index}">Edit</button><button class="btn btn-sm btn-outline-danger" data-index="${index}">Delete</button></div>`;
+        existingCardsList.appendChild(li);
+      });
+
+      // Placeholder for form submit - simulate adding/updating (console log for demo)
+      document
+        .getElementById("solutionForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const title = document.getElementById("solution-title").value;
+          const desc = document.getElementById("solution-desc").value;
+          const mediaType = document.getElementById(
+            "solution-media-type",
+          ).value;
+          // Handle file or URL accordingly
+          console.log("New/Updated Card:", { title, desc, mediaType });
+          alert("Card added/updated successfully (simulated)");
+        });
+
+      // Placeholder for edit/delete buttons
+      existingCardsList.addEventListener("click", function (e) {
+        if (e.target.tagName === "BUTTON") {
+          const index = e.target.dataset.index;
+          if (e.target.textContent === "Edit") {
+            // Populate form with card data
+            alert(`Editing card ${index} (simulated)`);
+          } else if (e.target.textContent === "Delete") {
+            // Remove card
+            alert(`Deleting card ${index} (simulated)`);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
